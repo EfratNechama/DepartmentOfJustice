@@ -1,0 +1,24 @@
+<mat-accordion *ngFor="let user of _userList" class="tbl" style="width:70%">
+    <mat-expansion-panel hideToggle class="tbl">
+        <mat-expansion-panel-header>
+            <ul>{{user.name}}</ul>
+            <button mat-raised-button (click)="getToDoListForUser(user)">to do list</button>
+        </mat-expansion-panel-header>
+        <table>
+            <tr>
+                <td class="a3"><b>id number: </b>{{user.id}}</td>
+                <td class="a3"><b> name: </b>{{user.name}}</td>
+                <td class="a3"><b> username: </b>{{user.username}}</td>
+                <td class="a3"><b> website: </b>{{user.website}}</td>
+                <td class="a3"><b> phone number: </b>{{user.phone}}</td>
+                <td class="a3"><b>email adress: </b>{{user.email}}</td>
+
+            </tr>
+        </table>
+    </mat-expansion-panel>
+</mat-accordion>
+<div class="tbl" *ngIf="_flag">
+    <div *ngFor="let td of _todoList">
+        <li>{{td.title}}</li>
+    </div>
+</div>
